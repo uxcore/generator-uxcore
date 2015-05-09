@@ -1,0 +1,62 @@
+{
+  "name": "rc-<%= appname%>",
+  "version": "<%= version%>",
+  "description": "<%= appname%> ui component for react",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-<%= appname%>",
+    "<%= appname%>"
+  ],
+  "homepage": "http://github.com/uxcore/<%= appname%>",
+  "author": "<%= author%>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:uxcore/<%= appname%>.git"
+  },
+  "bugs": {
+    "url": "http://github.com/uxcore/<%= appname%>/issues"
+  },
+  "licenses": "MIT",
+  "spm": {
+    "dependencies": {
+      "react": "*"
+    }
+  },
+  "config":{
+    "port": <%= port%>
+  },
+  "scripts": {
+    "test": "mocha --recursive --reporter spec --require should",
+    "test-w": "mocha --recursive --reporter spec --require should --watch",
+    "lib": "gulp",
+    "build-style": "webpack --progress --colors --config build-style.config.js",
+    "build-style-dist": "webpack --progress --colors --config build-style-dist.config.js",
+    "build-style-dist-min": "webpack --progress --colors --config build-style-dist-min.config.js",
+    "stats": "webpack --profile --progress --colors --config dist.config.js --json > stats.json",
+    "dist": "webpack --progress --colors --config dist.config.js",
+    "watch-dist": "webpack --watch --progress --colors --config dist.config.js",
+    "dist.min": "webpack --progress --colors --optimize-minimize --optimize-occurence-order --optimize-dedupe --config dist.min.config.js",
+    "build": "npm run lib && npm run dist && npm run dist.min && npm run build-style && npm run build-style-dist && npm run build-style-dist-min",
+    "serve": "http-server -p ",
+    "dev": "webpack-dev-server --progress --colors --port <%= port%>"
+  },
+  "devDependencies": {
+    "expect.js": "0.3.x",
+    "precommit-hook": "1.x",
+    "rc-server": "2.x",
+    "rc-tools": "2.x",
+    "react": "0.13.x",
+    "node-dev":"2.x"
+  },
+  "precommit": [
+    "lint",
+    "less"
+  ],
+  "browserify": {
+    "transform": [
+      ["reactify", {"es6": true}],
+      "envify"
+    ]
+  }
+}
