@@ -24,7 +24,7 @@
     }
   },
   "config":{
-    "port": <%= port%>
+    "port": "<%= port%>"
   },
   "scripts": {
     "test": "mocha --recursive --reporter spec --require should",
