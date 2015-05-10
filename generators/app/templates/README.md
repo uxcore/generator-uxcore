@@ -1,12 +1,12 @@
-# uxcore-<%= appname%>
+# <%= appname%>
 ---
 
 <%= appname%> ui component for react
 
 
 ```sh
-$ git clone https://github.com/uxcore/uxcore-<%= appname%>
-$ cd uxcore-<%= appname%>
+$ git clone https://github.com/uxcore/<%= appname%>
+$ cd <%= appname%>
 $ npm install
 $ npm run dev
 ```
