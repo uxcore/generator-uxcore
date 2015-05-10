@@ -1,11 +1,30 @@
+/**
+* @author: 
+* @time:
+*/
 import React from 'react';
 const component = React.createClass({
-  render: function() {
-        return (
+    mixins: [],
+    propTypes: {
+    },
+    getDefaultProps() {
+        return {
+        };
+    },
+    getInitialState() {
+        return {
+        };
+    },
+    componentDidMount: function() {},
+    componentDidUpdate: function() {},
+    componentWillUnmount: function() {},
+    render() {
+    	 return (
             <div>
-                Hello world2.
+                Hello world.
             </div>
         )
     }
+
 });
 export default component;
