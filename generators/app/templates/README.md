@@ -1,3 +1,0 @@
-# uxcore-<%= appname%>
----
- todo
