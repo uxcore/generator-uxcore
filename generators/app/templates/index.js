@@ -1,1 +1,1 @@
-module.exports = require('./lib/<%=AppName%>');
+module.exports= require('./lib/index.jsx');
