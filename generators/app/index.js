@@ -1,3 +1,4 @@
+//thanks https://github.com/react-component/generator-rc
 var yeoman = require('yeoman-generator');
 var Base = yeoman.generators.Base;
 var Path = require('path');
@@ -12,7 +13,7 @@ function camelCase(name){
 module.exports = Base.extend({
   constructor: function () {
     Base.apply(this, arguments);
-    this.option('port', {type: Number, defaults: '8000'});
+    this.option('port', {type: Number, defaults: '9090'});
     this.option('uxcore_version', {type: String, defaults: '1.0.0'});
     this.option('author', {type: String, defaults: ''});
   },
@@ -22,7 +23,7 @@ module.exports = Base.extend({
     this.AppName = this.appname.charAt(0).toUpperCase() + camelCase(this.appname.slice(1));
     this.log('welcome to generator-uxcore: ' + this.appname);
     this.port = this.options.port;
-    this.version = this.options.rc_version;
+    this.version = this.options.uxcore_version;
     this.author = this.options.author;
   },
 
