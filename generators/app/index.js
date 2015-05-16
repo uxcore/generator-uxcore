@@ -43,13 +43,6 @@ module.exports = Base.extend({
         fs.renameSync(path, oldPath);
       }
     });
-    var AppName = this.AppName;
-    this.dest.write('lib/' + AppName + '.js', [
-      '/** @jsx React.DOM */',
-      'var React = require(\'react\');',
-      'var ' + AppName + ' = React.createClass();',
-      'module.exports = ' + AppName + ';'
-    ].join('\n'));
   },
 
   done: function () {
