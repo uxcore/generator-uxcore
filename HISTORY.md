@@ -1,9 +1,14 @@
 HISTORY
 =================
 
+## 0.1.9
+
+`bug fix`  correct gitignore name
+
+
 ## 0.1.8
 
-`new` add  `yo uxcore:js myjs` for quick create new js file
+`new` add  `yo uxcore:js` for quick create new js file
 
 ## 0.1.7 
 
