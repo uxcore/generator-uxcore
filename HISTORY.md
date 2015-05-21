@@ -1,6 +1,12 @@
 HISTORY
 =================
 
+
+## 0.2.0
+
+`bug fix`  correct gitignore name
+
+
 ## 0.1.9
 
 `bug fix`  correct gitignore name

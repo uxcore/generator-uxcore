@@ -1,5 +1,5 @@
 {
-  "name": "uxcore-<%= appname%>",
+  "name": "<%= appname%>",
   "version": "<%= version%>",
   "description": "<%= appname%> ui component for react",
   "main": "lib/index.js",
