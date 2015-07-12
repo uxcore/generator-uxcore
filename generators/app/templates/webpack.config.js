@@ -1,15 +1,15 @@
-'use strict'
-
-var webpack = require('webpack')
+'use strict';
+var webpack = require('webpack');
 
 module.exports = {
     entry: [
-        // 'webpack-dev-server/client?http://localhost:9090/assets',
-        // 'webpack/hot/only-dev-server',
         './example/index.jsx'
     ],
     output: {
-        publicPath: 'http://localhost:9090/assets'
+        //publicPath: 'http://localhost:9090/assets',
+        path: './build',
+        publicPath: '/assets/',
+        filename: 'bundle.js'
     },
     module: {
         loaders: require('./loaders.config')
@@ -27,10 +27,12 @@ module.exports = {
         // new webpack.NoErrorsPlugin()
     ],
 
-    devServer: {    
+    debug: true,
+    devtool: 'eval',
+
+    devServer: {
         info: true,
         quiet: false,
-
         stats: {
             colors: true,
             progress: true

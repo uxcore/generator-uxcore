@@ -3,7 +3,6 @@ module.exports = [
         test: /\.jsx$/,
         exclude: /node_modules/,
         loaders: [
-            // 'react-hot',
             'babel-loader'
         ]
     },
@@ -11,16 +10,11 @@ module.exports = [
         test: /\.js$/,
         exclude: /node_modules/,
         loaders: [
-            // 'react-hot',
             'babel-loader'
         ]
     },
     {
-        test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader'
-    },
-    {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        test: /\.less$/,
+        loader: 'style!css!less'
     }
 ]

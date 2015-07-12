@@ -1,8 +1,9 @@
 /**
-* @author: 
+* @author:
 * @time:
 */
 import React from 'react';
+
 const component = React.createClass({
     mixins: [],
     propTypes: {
