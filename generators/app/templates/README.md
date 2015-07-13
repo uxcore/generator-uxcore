@@ -1,9 +1,24 @@
 # <%= appname%>
 ---
 
+- tags:
+- description:
+- maintainers:
+- version:
+- lastupadate:
+- screenshots:
+
+---
+
+[TOC]
+
+**TL;DR**
+
 <%= appname%> ui component for react
 
+## Usage
 
+### init
 ```sh
 $ git clone https://github.com/uxcore/<%= appname%>
 $ cd <%= appname%>
@@ -11,5 +26,6 @@ $ npm install
 $ npm run dev
 ```
 
-then nav http://localhost:9090/example/ to see the demo
+### demo
 
+### api
