@@ -1,5 +1,4 @@
 # <%= appname%>
----
 
 - tags:
 - description:
@@ -10,22 +9,41 @@
 
 ---
 
-[TOC]
-
-**TL;DR**
+## TL;DR
 
 <%= appname%> ui component for react
 
-## Usage
+#### setup develop environment
 
-### init
 ```sh
 $ git clone https://github.com/uxcore/<%= appname%>
 $ cd <%= appname%>
 $ npm install
+$ git submodule add git@github.com:uxcore/kuma style/kuma
+$ git submodule init
+$ git submodule update
 $ npm run dev
 ```
 
-### demo
+nav http://localhost:9090/webpack-dev-server/example/ to see the demo
 
-### api
+#### deploy to gh-pages
+[refer to]( http://stackoverflow.com/questions/17643381/how-to-upload-my-angularjs-static-site-to-github-pages)
+```sh
+$ npm run build
+$ git add build & git commit -m 'update deploy files'
+$ npm run deploy
+```
+
+## Usage
+
+### demo
+http://uxcore.github.io/<%= appname%>/
+
+### API
+
+### props
+
+|参数|说明|类型|默认值|
+|---|----|---|------|
+| arg |description |type|default |

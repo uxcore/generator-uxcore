@@ -2,7 +2,7 @@
  * example index
  */
 import React from 'react';
-import App from '../lib/index.jsx';
+import App from '../index';
 
 React.render((
     <App />

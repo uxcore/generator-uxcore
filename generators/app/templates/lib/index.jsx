@@ -4,28 +4,15 @@
 */
 import React from 'react';
 
-const component = React.createClass({
-    mixins: [],
-    propTypes: {
-    },
-    getDefaultProps() {
-        return {
-        };
-    },
-    getInitialState() {
-        return {
-        };
-    },
-    componentDidMount: function() {},
-    componentDidUpdate: function() {},
-    componentWillUnmount: function() {},
+export default class Component extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render() {
-    	 return (
+    	return (
             <div>
                 Hello world.
             </div>
-        )
+        );
     }
-
-});
-export default component;
+}
