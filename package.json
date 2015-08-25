@@ -10,12 +10,17 @@
   },
   "keywords": ["yeoman-generator"],
   "dependencies": {
-    "yeoman-generator": "^0.17.3"
+    "lodash": "~3.10.0",
+    "yeoman-generator": "~0.20.2"
   },
   "maintainers": [
     {
       "name": "vincent.bian",
       "email": "macisi528@gmail.com"
+    },
+    {
+      "name": "eternalsky",
+      "email": "wsj7552715@hotmail.com"
     }
   ],
   "bugs": {
