@@ -22,6 +22,7 @@ class <%= ComponentName %> extends React.Component {
 <%= ComponentName %>.defaultProps = {
 }
 
+
 // http://facebook.github.io/react/docs/reusable-components.html
 <%= ComponentName %>.propTypes = {
 }

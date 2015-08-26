@@ -66,8 +66,6 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     componentFiles: function () {
-        this.mkdir('src/svg/tingle');
-        this.mkdir('src/svg/custom');
         this.template('src/index.js', 'src/index.js');
         this.template('src/ComponentName.js', 'src/'+this.ComponentName+'.js');
         this.template('src/ComponentName.less', 'src/'+this.ComponentName+'.less');
