@@ -1,5 +1,5 @@
 /**
- * <%= ComponentName %> Component Style for uxcore
+ * <%= ComponentName %> Component for uxcore
  * @author <%= props.authorName %>
  *
  * Copyright 2014-2015, Uxcore Team, Alinw.
