@@ -12,7 +12,7 @@ module.exports = yeoman.generators.Base.extend({
 
         var prompts = [{
             name: 'name',
-            message: 'Input uxcore Component Name (must start width `uxcore-`)',
+            message: 'Component Name (must start width `uxcore-`)',
             default: path.basename(process.cwd())
         },{
             name: 'description',

@@ -29,11 +29,13 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                // uxcore组件以外的modules都不需要经过babel解析
+
+                test: /\.js(x)*$/,
+                // uxcore以外的modules都不需要经过babel解析
                 exclude: function (path) {
                     var isNpmModule = !!path.match(/node_modules/);
-                    return isNpmModule;
+                    var isUxcore = !!path.match(/node_modules\/uxcore/);
+                    return isNpmModule & !isUxcore;
                 },
                 loader: 'babel-loader?stage=1'
             }

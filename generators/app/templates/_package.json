@@ -13,7 +13,10 @@
     "url": "http://github.com/uxcore/<%= name%>/issues"
   },
   "keywords": [
-    "react,react-component,<%= name %>,<%= ComponentName %>"<% if(keywords.length){%><% for (var i = 0; i < keywords.length; i++) { %>,
+    "react",
+    "react-component",
+    "<%= name %>",
+    "<%= ComponentName %>"<% if(keywords.length){%><% for (var i = 0; i < keywords.length; i++) { %>,
     "<%= keywords[i] %>"<% }} %>
   ],
   "devDependencies": {
@@ -27,12 +30,10 @@
     "gulp-just-replace": "~1.0.2",
     "gulp-less": "~3.0.3",
     "gulp-sourcemaps": "~1.5.2",
-    "less": "^2.5.1",
     "webpack": "^1.10.5"
   },
   "dependencies": {
     "classnames": "^2.1.2",
-    "es6-promise": "^2.1.1",
     "object-assign": "^2.0.0",
     "react": "^0.13.3",
     "uxcore-kuma": "~1.0.3"
