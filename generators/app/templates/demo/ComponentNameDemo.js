@@ -6,9 +6,9 @@
  * All rights reserved.
  */
 
-var classnames = require('classnames');
+let classnames = require('classnames');
 
-var <%= ComponentName %> = require('../src');
+let <%= ComponentName %> = require('../src');
 
 class Demo extends React.Component {
 
