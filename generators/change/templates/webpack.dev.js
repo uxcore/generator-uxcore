@@ -1,11 +1,11 @@
 var fs = require('fs');
 var webpack = require('webpack');
 
-// 扫描tingle目录下的所有module
+// 扫描uxcore组件目录下的所有module
 function getUxcoreModuleAlias() {
     var alias = {};
 
-    // 判断是否存在tingle目录
+    // 判断是否存在uxcore目录
     if (!fs.existsSync('./uxcore')) return alias;
 
     var modules = fs.readdirSync('./uxcore');
@@ -29,6 +29,7 @@ module.exports = {
     module: {
         loaders: [
             {
+
                 test: /\.js(x)*$/,
                 // uxcore以外的modules都不需要经过babel解析
                 exclude: function (path) {
@@ -41,7 +42,7 @@ module.exports = {
         ]
     },
     resolve: {
-        alias: getUxcoreModuleAlias()
+       // alias: getUxcoreModuleAlias()
     },
     externals: {
         react: 'var React' // 相当于把全局的React作为模块的返回 module.exports = React;
