@@ -44,6 +44,7 @@ module.exports = yeoman.generators.Base.extend({
         }
 
         pkg.scripts.dev = "gulp server";
+        pkg.main = "src/index.js";
         me.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
         me.template('index.html', 'index.html');
     },
