@@ -2,6 +2,10 @@ HISTORY
 =================
 
 
+## 1.0.5
+
+`CHANGED` big changes in the generator mode and folder structure
+
 ## 0.2.0
 
 `bug fix`  correct gitignore name
