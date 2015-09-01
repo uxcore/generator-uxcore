@@ -15,13 +15,6 @@ module.exports = yeoman.generators.Base.extend({
         me.ComponentName = _.capitalize(_.camelCase(pkg.name))
             .replace(/Uxcore/, '');
         me.name = pkg.name;
-
-        // gulpfile 和 gitignore 更新，不通知用户
-        me.bulkCopy('_gitignore', '.gitignore');
-        ['gulpfile.js', 'webpack.dev.js'].forEach(function(item, index) {
-            me.bulkCopy(item, item);
-        });
-
         pkg.dependencies = {
             "classnames": "^2.1.2",
             "object-assign": "^2.0.0",
@@ -46,13 +39,22 @@ module.exports = yeoman.generators.Base.extend({
         pkg.scripts.dev = "gulp server";
         pkg.main = "src/index.js";
         me.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
-        me.template('index.html', 'index.html');
+       
     },
     del: function() {
         var me = this;
-        fs.remove('loaders.config.js');
-        fs.remove('webpack.config.js');
-        fs.remove('index.js');
+        fs.remove('*.config.js');
+        fs.remove('webpack.*.js');
+        fs.remove('index*js');
+    },
+    copy: function() {
+        var me = this;
+        // gulpfile 和 gitignore 更新，不通知用户
+        me.bulkCopy('_gitignore', '.gitignore');
+        ['gulpfile.js', 'webpack.dev.js'].forEach(function(item, index) {
+            me.bulkCopy(item, item);
+        });
+        me.template('index.html', 'index.html');
     },
     changeName: function() {
         var me = this;
