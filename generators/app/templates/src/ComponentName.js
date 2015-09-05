@@ -27,6 +27,6 @@ class <%= ComponentName %> extends React.Component {
 <%= ComponentName %>.propTypes = {
 }
 
-<%= ComponentName %>.displayName = <%= ComponentName %>;
+<%= ComponentName %>.displayName = "<%= ComponentName %>";
 
 module.exports = <%= ComponentName %>;

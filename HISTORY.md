@@ -1,6 +1,9 @@
 HISTORY
 =================
 
+## 1.0.6
+
+`FIXED` displayName bug in app
 
 ## 1.0.5
 
