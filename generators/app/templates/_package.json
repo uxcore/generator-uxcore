@@ -6,8 +6,7 @@
   "author": "<%= props.authorName %>",
   "main": "src/index.js",
   "scripts": {
-    "dev": "gulp server",
-    "deploy": "git subtree push --prefix build origin gh-pages"
+    "dev": "gulp server"
   },
   "bugs": {
     "url": "http://github.com/uxcore/<%= name%>/issues"

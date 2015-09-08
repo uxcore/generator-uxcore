@@ -36,7 +36,7 @@ module.exports = yeoman.generators.Base.extend({
             "webpack": "^1.10.5"
         }
 
-        pkg.scripts.dev = "gulp server";
+        pkg.scripts = {dev: "gulp server"};
         pkg.main = "src/index.js";
         me.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
        
