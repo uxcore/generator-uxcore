@@ -17,12 +17,12 @@ $ gulp server
 
 ## Usage
 
-### demo
+## demo
 http://uxcore.github.io/uxcore/components/<%= name%>/
 
-### API
+## API
 
-### props
+## Props
 
 | 配置项 | 类型 | 必填 | 默认值 | 功能/备注 |
 |---|---|---|---|---|

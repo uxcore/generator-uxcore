@@ -4,6 +4,7 @@ HISTORY
 ## 1.0.6
 
 `FIXED` displayName bug in app
+`CHANGED` dependencies & readme little changed
 
 ## 1.0.5
 
