@@ -1,6 +1,16 @@
 HISTORY
 =================
 
+
+## 1.0.9
+
+`FIXED` fixed upgrade bug which will reset the dependency.
+
+## 1.0.8
+
+`CHANGED` remove gulp task `less_component`, all css will be packed in demo.css
+`CHANGED` react & uxcore-kuma dependency update
+
 ## 1.0.6
 
 `FIXED` displayName bug in app
