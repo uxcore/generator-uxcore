@@ -2,6 +2,10 @@ HISTORY
 =================
 
 
+## 1.0.10
+
+`FIXED` gulp task has some useless code
+
 ## 1.0.9
 
 `FIXED` fixed upgrade bug which will reset the dependency.
