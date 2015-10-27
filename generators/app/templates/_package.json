@@ -31,6 +31,7 @@
     "gulp-sourcemaps": "~1.5.2",
     "webpack": "^1.10.5",
     "react": "^0.14.0",
+    "react-dom": "~0.14.0",
     "uxcore-kuma": "~1.1.0"
   },
   "dependencies": {

@@ -18,7 +18,7 @@ $ gulp server
 ## Usage
 
 ## demo
-http://uxcore.github.io/uxcore/components/<%= name%>/
+http://uxcore.github.io/
 
 ## API
 

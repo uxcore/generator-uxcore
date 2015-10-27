@@ -1,6 +1,9 @@
 HISTORY
 =================
 
+## 1.0.11
+
+`CHANGED` update to react & react-dom 0.14
 
 ## 1.0.10
 
