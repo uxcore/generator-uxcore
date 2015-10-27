@@ -7,5 +7,6 @@ module.exports = yeoman.generators.Base.extend({
     inherit: function() {
         var me = this;
         me.bulkCopy('gulpfile.js', 'gulpfile.js');
+        me.bulkCopy('webpack.dev.js', 'webpack.dev.js');
     }
 });
