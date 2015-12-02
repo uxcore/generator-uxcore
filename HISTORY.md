@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 1.0.13
+
+`CHANGED` update dependency object-assign to ^4.0.0
+
 ## 1.0.12
 
 `CHANGED` exclude react-dom in webpack config
