@@ -10,5 +10,8 @@ module.exports = yeoman.generators.Base.extend({
         var pkg = JSON.parse(file.readFileAsString('package.json'));
         pkg.dependencies['object-assign'] = '^4.0.0';
         file.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
+        ['gulpfile.js', 'webpack.dev.js'].forEach(function(item, index) {
+            this.copy(item, item);
+        }.bind(this));
     }
 });

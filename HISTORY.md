@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 1.0.14
+
+`CHANGED` rewrite babel-loader exclude
+
 ## 1.0.13
 
 `CHANGED` update dependency object-assign to ^4.0.0
