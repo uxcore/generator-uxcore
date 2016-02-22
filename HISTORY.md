@@ -1,6 +1,11 @@
 HISTORY
 =================
 
+## 1.0.15
+
+`CHANGED` update babel to babel 6.
+`CHANGED` translate es6 to es5 before publish using babel
+
 ## 1.0.14
 
 `CHANGED` rewrite babel-loader exclude
