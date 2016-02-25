@@ -1,6 +1,15 @@
 HISTORY
 =================
 
+
+## 1.0.17
+
+`CHANGED` add react & react-dom devDependence
+
+## 1.0.16
+
+`CHANGED` add .npmignore to prevent npm adding .npmignore by itself.
+
 ## 1.0.15
 
 `CHANGED` update babel to babel 6.

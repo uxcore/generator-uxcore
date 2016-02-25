@@ -25,7 +25,9 @@ module.exports = yeoman.generators.Base.extend({
             "babel-preset-react": "~6.3.13",
             "babel-preset-stage-1": "~6.3.13",
             "browser-sync": "~2.11.0",
-            "gulp-babel": "~6.1.1"
+            "gulp-babel": "~6.1.1",
+            "react": "~0.14.0",
+            "react-dom": "~0.14.0"
         });
 
         pkg.devDependencies = sortObjByKey(pkg.devDependencies);
@@ -37,5 +39,6 @@ module.exports = yeoman.generators.Base.extend({
             this.copy(item, item);
         }.bind(this));
         this.template('_gitignore', '.gitignore');
+        this.copy('_npmignore', '.npmignore');
     }
 });

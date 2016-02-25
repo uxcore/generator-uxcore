@@ -49,6 +49,7 @@ module.exports = yeoman.generators.Base.extend({
     app: function() {
         this.config.save();
         this.copy('_gitignore', '.gitignore');
+        this.copy('_npmignore', '.npmignore');
         this.copy('_editorconfig', '.editorconfig')
         this.copy('_jshintrc', '.jshintrc');
         ['gulpfile.js', 'HISTORY.md', 'webpack.dev.js'].forEach(function(item, index) {
