@@ -17,7 +17,6 @@ module.exports = yeoman.generators.Base.extend({
         var me = this;
         var pkg = JSON.parse(file.readFileAsString('package.json'));
         pkg.devDependencies = _.assign({}, pkg.devDependencies, {
-            "babel": "~6.3.26",
             "babel-core": "~6.4.0",
             "babel-loader": "~6.2.1",
             "babel-plugin-add-module-exports": "~0.1.2",
@@ -27,8 +26,18 @@ module.exports = yeoman.generators.Base.extend({
             "browser-sync": "~2.11.0",
             "gulp-babel": "~6.1.1",
             "react": "~0.14.0",
-            "react-dom": "~0.14.0"
+            "react-dom": "~0.14.0",
+            "gulp-es3ify": "0.0.0",
+            "es3ify-loader": "~0.1.0",
+            "colors": "^1.1.2",
+            "cross-spawn": "^2.1.5",
+            "html-wiring": "~1.2.0",
+            "inquirer": "^0.12.0"
         });
+
+        pkg.dependencies = _.assign({}, pkg.dependencies, {
+            "object-assign": "^4.0.0"
+        })
 
         pkg.devDependencies = sortObjByKey(pkg.devDependencies);
 

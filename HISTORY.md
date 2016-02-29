@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 1.0.18
+
+`NEW` add new gulp task `publish`
+`FIX` fix bug in babel-transformed build file about `export.default`
 
 ## 1.0.17
 
