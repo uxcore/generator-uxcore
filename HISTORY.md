@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 1.0.19
+
+`FIX` fix bug when using babel 6: props & state cannot be inherited
+
 ## 1.0.18
 
 `NEW` add new gulp task `publish`
