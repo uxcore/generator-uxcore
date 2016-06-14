@@ -3,6 +3,7 @@ var path = require('path');
 var _ = require('lodash');
 var yeoman = require('yeoman-generator');
 var file = require('html-wiring');
+var shelljs = require('shelljs');
 
 var sortObjByKey = function(unordered) {
     var ordered = {};
@@ -16,38 +17,43 @@ module.exports = yeoman.generators.Base.extend({
     inherit: function() {
         var me = this;
         var pkg = JSON.parse(file.readFileAsString('package.json'));
-        pkg.devDependencies = _.assign({}, pkg.devDependencies, {
-            "babel-core": "~6.4.0",
-            "babel-loader": "~6.2.1",
-            "babel-plugin-add-module-exports": "~0.1.2",
-            "babel-preset-es2015-loose": "~7.0.0",
-            "babel-preset-react": "~6.3.13",
-            "babel-preset-stage-1": "~6.3.13",
-            "browser-sync": "~2.11.0",
-            "gulp-babel": "~6.1.1",
-            "react": "~0.14.0",
-            "react-dom": "~0.14.0",
-            "gulp-es3ify": "0.0.0",
-            "es3ify-loader": "~0.1.0",
-            "colors": "^1.1.2",
-            "cross-spawn": "^2.1.5",
-            "html-wiring": "~1.2.0",
-            "inquirer": "^0.12.0"
+        var oldDev = {};
+
+        for (var key in pkg.devDependencies) {
+            if (/uxcore/.test(key)) {
+                oldDev[key] = pkg.devDependencies[key];
+            }
+        }
+
+        pkg.devDependencies = _.assign({}, oldDev, {
+            "console-polyfill": "^0.2.2",
+            "es5-shim": "^4.5.8",
+            "react": "15.x",
+            "react-dom": "15.x",
+            "react-addons-test-utils": "15.x",
+            "expect.js": "~0.3.1",
+            "uxcore-tools": "0.2.x",
+            "uxcore-kuma": "2.x",
+            "kuma-base": "1.x"
         });
 
-        pkg.dependencies = _.assign({}, pkg.dependencies, {
-            "object-assign": "^4.0.0"
-        })
-
         pkg.devDependencies = sortObjByKey(pkg.devDependencies);
-
-        pkg.main = 'build/index.js';
+        pkg.scripts = {}
+        var commands = ['start', 'server', 'lint', 'build', 'test', 'coverage', 'pub', 'dep', 'chrome', 'browsers', 'saucelabs', 'update'];
+        commands.forEach(function(item) {
+            pkg.scripts[item] = 'uxcore-tools run ' + item;
+        });
+        var cwd = process.cwd();
+        shelljs.rm('-rf', ['.editorconfig', '.jshintrc', 'gulpfile.js', 'webpack.dev.js'].map(function(item) {
+            return cwd + '/' + item;
+        }));
 
         file.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
-        ['gulpfile.js', 'webpack.dev.js'].forEach(function(item, index) {
-            this.copy(item, item);
-        }.bind(this));
-        this.template('_gitignore', '.gitignore');
+        this.ComponentName = _.capitalize(_.camelCase(pkg.name.split('-').slice(1).join('-')));
+        this.template('tests/ComponentName.spec.js', 'tests/' + this.ComponentName + '.spec.js');
+        this.copy('tests/index.js', 'tests/index.js');
+        this.copy('_travis.yml', '.travis.yml');
+        this.copy('_gitignore', '.gitignore');
         this.copy('_npmignore', '.npmignore');
     }
 });

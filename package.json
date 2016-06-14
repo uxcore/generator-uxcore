@@ -1,6 +1,6 @@
 {
   "name": "generator-uxcore",
-  "version": "1.0.19",
+  "version": "2.0.0",
   "description": "generator for uxcore component",
   "engines": {
     "node": ">=0.11"
@@ -13,6 +13,7 @@
     "fs-extra": "~0.24.0",
     "html-wiring": "~1.2.0",
     "lodash": "~3.10.0",
+    "shelljs": "~0.7.0",
     "yeoman-generator": "~0.20.1"
   },
   "maintainers": [

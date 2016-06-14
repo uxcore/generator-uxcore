@@ -34,6 +34,8 @@ module.exports = yeoman.generators.Base.extend({
 
         this.prompt(prompts, function(answers) {
             this.name = answers.name;
+            this.demoName = this.name.split('-').slice(1).join('-');
+            this.descriptionName = "React " + this.demoName.split('-').join(' ');
             this.ComponentName = _.capitalize(_.camelCase(answers.name))
                 .replace(/Uxcore/, '');
 
@@ -48,10 +50,9 @@ module.exports = yeoman.generators.Base.extend({
 
     app: function() {
         this.config.save();
+        this.copy('_travis.yml', '.travis.yml');
         this.copy('_gitignore', '.gitignore');
         this.copy('_npmignore', '.npmignore');
-        this.copy('_editorconfig', '.editorconfig')
-        this.copy('_jshintrc', '.jshintrc');
         ['gulpfile.js', 'HISTORY.md', 'webpack.dev.js'].forEach(function(item, index) {
             this.copy(item, item);
         }.bind(this));
@@ -72,11 +73,16 @@ module.exports = yeoman.generators.Base.extend({
         this.template('src/ComponentName.less', 'src/'+this.ComponentName+'.less');
     },
 
+    testFiles: function() {
+        this.template('tests/ComponentName.spec.js', 'tests/' + this.ComponentName + '.spec.js');
+        this.copy('tests/index.js', 'tests/index.js');
+    },
+
     install: function() {
         if (this.props.skipInstall) {
             return;
         }
-        this.spawnCommand('tnpm', [
+        this.spawnCommand('npm', [
             'install',
             '-d'
         ]).on('close', this.async());

@@ -1,14 +1,28 @@
 HISTORY
 =================
 
+## 2.0.0
+
+`NEW` use uxcore-tools，new start.
+
+## 1.1.0
+
+`NEW` a new start, use uxcore-tools to handle everything, no gulpfile, no webpack config in user folder
+
+## 1.0.21
+
+`NEW` identify current branch & npm automatically
+`CHANGED` change with kuma 2.x.
+`CHANGED` copyright change
+
 ## 1.0.19
 
 `FIX` fix bug when using babel 6: props & state cannot be inherited
 
 ## 1.0.18
 
-`NEW` add new gulp task `publish`
-`FIX` fix bug in babel-transformed build file about `export.default`
+* `NEW` add new gulp task `publish`
+* `FIX` fix bug in babel-transformed build file about `export.default`
 
 ## 1.0.17
 

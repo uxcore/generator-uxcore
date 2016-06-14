@@ -25,4 +25,5 @@ _site
 sea-modules
 spm_modules
 .cache
+.happypack
 dist
