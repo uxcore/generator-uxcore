@@ -1,6 +1,6 @@
 {
   "name": "generator-uxcore",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "generator for uxcore component",
   "engines": {
     "node": ">=0.11"

@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.0.1
+
+`CHANGED` change js template to fit airbnb style.
+
 ## 2.0.0
 
 `NEW` use uxcore-tools，new start.

@@ -28,9 +28,9 @@ module.exports = yeoman.generators.Base.extend({
         pkg.devDependencies = _.assign({}, oldDev, {
             "console-polyfill": "^0.2.2",
             "es5-shim": "^4.5.8",
-            "react": "15.x",
-            "react-dom": "15.x",
-            "react-addons-test-utils": "15.x",
+            "react": "0.14.x",
+            "react-dom": "0.14.x",
+            "react-addons-test-utils": "0.14.x",
             "expect.js": "~0.3.1",
             "uxcore-tools": "0.2.x",
             "uxcore-kuma": "2.x",
@@ -39,7 +39,7 @@ module.exports = yeoman.generators.Base.extend({
 
         pkg.devDependencies = sortObjByKey(pkg.devDependencies);
         pkg.scripts = {}
-        var commands = ['start', 'server', 'lint', 'build', 'test', 'coverage', 'pub', 'dep', 'chrome', 'browsers', 'saucelabs', 'update'];
+        var commands = ['start', 'server', 'lint', 'build', 'test', 'coverage', 'pub', 'dep', 'tnpm-dep', 'chrome', 'browsers', 'saucelabs', 'update'];
         commands.forEach(function(item) {
             pkg.scripts[item] = 'uxcore-tools run ' + item;
         });

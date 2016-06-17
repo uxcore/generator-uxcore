@@ -6,5 +6,8 @@
  * All rights reserved.
  */
 
- var Demo = require('./<%= ComponentName %>Demo');
- ReactDOM.render(<Demo/>, document.getElementById('UXCoreDemo'));
+const ReactDOM = require('react-dom');
+const React = require('react');
+const Demo = require('./<%= ComponentName %>Demo');
+ReactDOM.render(<Demo />, document.getElementById('UXCoreDemo'));
+

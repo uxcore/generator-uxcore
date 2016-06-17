@@ -20,16 +20,13 @@ module.exports = yeoman.generators.Base.extend({
             default: path.basename(process.cwd()) + ' component for uxcore.'
         }, {
             name: 'keywords',
-            message: 'Key your keywords (comma to split)'
+            message: 'Key your keywords (comma to split)',
+            default: 'component'
         }, {
             name: 'authorName',
             message: 'Author\'s Name',
+            default: 'eternalsky',
             store: true
-        }, {
-            type: 'confirm',
-            name: 'skipInstall',
-            message: 'Skip install the dependencies?',
-            default: false
         }];
 
         this.prompt(prompts, function(answers) {
@@ -53,9 +50,7 @@ module.exports = yeoman.generators.Base.extend({
         this.copy('_travis.yml', '.travis.yml');
         this.copy('_gitignore', '.gitignore');
         this.copy('_npmignore', '.npmignore');
-        ['gulpfile.js', 'HISTORY.md', 'webpack.dev.js'].forEach(function(item, index) {
-            this.copy(item, item);
-        }.bind(this));
+        this.copy('HISTORY.md', 'HISTORY.md');
         this.template('README.md', 'README.md');
         this.template('_package.json', 'package.json');
     },
@@ -76,15 +71,5 @@ module.exports = yeoman.generators.Base.extend({
     testFiles: function() {
         this.template('tests/ComponentName.spec.js', 'tests/' + this.ComponentName + '.spec.js');
         this.copy('tests/index.js', 'tests/index.js');
-    },
-
-    install: function() {
-        if (this.props.skipInstall) {
-            return;
-        }
-        this.spawnCommand('npm', [
-            'install',
-            '-d'
-        ]).on('close', this.async());
     }
 });
