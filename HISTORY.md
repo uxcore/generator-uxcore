@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.0.2
+
+`NEW` add eslint config file
+
 ## 2.0.1
 
 `CHANGED` change js template to fit airbnb style.
