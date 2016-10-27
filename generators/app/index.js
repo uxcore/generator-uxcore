@@ -50,6 +50,7 @@ module.exports = yeoman.generators.Base.extend({
         this.copy('_travis.yml', '.travis.yml');
         this.copy('_gitignore', '.gitignore');
         this.copy('_npmignore', '.npmignore');
+        this.copy('_eslintrc.json', '.eslintrc.json');
         this.copy('HISTORY.md', 'HISTORY.md');
         this.template('README.md', 'README.md');
         this.template('_package.json', 'package.json');

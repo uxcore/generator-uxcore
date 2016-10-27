@@ -52,6 +52,7 @@ module.exports = yeoman.generators.Base.extend({
         this.ComponentName = _.capitalize(_.camelCase(pkg.name.split('-').slice(1).join('-')));
         this.template('tests/ComponentName.spec.js', 'tests/' + this.ComponentName + '.spec.js');
         this.copy('tests/index.js', 'tests/index.js');
+        this.copy('_eslintrc.json', '.eslintrc.json');
         this.copy('_travis.yml', '.travis.yml');
         this.copy('_gitignore', '.gitignore');
         this.copy('_npmignore', '.npmignore');
