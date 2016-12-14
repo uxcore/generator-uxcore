@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.0.3
+
+`CHANGED` tests support jsx
+
 ## 2.0.2
 
 `NEW` add eslint config file
