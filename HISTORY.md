@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.0.4
+
+`CHANGED` default eslint config
+
 ## 2.0.3
 
 `CHANGED` tests support jsx
