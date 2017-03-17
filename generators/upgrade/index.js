@@ -39,7 +39,7 @@ module.exports = yeoman.generators.Base.extend({
 
         pkg.devDependencies = sortObjByKey(pkg.devDependencies);
         pkg.scripts = {}
-        var commands = ['start', 'server', 'lint', 'build', 'test', 'coverage', 'pub', 'dep', 'tnpm-dep', 'chrome', 'browsers', 'saucelabs', 'update'];
+        var commands = ['start', 'server', 'lint', 'build', 'test', 'coverage', 'pub', 'dep', 'tnpm-dep', 'chrome', 'browsers', 'saucelabs', 'update', 'tnpm-update'];
         commands.forEach(function(item) {
             pkg.scripts[item] = 'uxcore-tools run ' + item;
         });

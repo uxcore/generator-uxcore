@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.0.5
+
+`CHANGED` change travis config & package.json template 
+
 ## 2.0.4
 
 `CHANGED` default eslint config
