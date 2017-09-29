@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.1.0
+
+`CHANGED` For React@15.x
+
 ## 2.0.5
 
 `CHANGED` change travis config & package.json template 
