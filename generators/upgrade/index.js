@@ -41,7 +41,6 @@ module.exports = yeoman.generators.Base.extend({
             "react": "15.x",
             "react-dom": "15.x",
             "react-test-renderer": "15.x",
-            "react-addons-test-utils": "15.x",
             "expect.js": "~0.3.1",
             "uxcore-tools": "0.2.x",
             "uxcore-kuma": "*",

@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.2.0
+
+`CHANGED` use `react-dom/test-utils` instead of `react-addons-test-utils`
+
 ## 2.1.0
 
 `CHANGED` For React@15.x
