@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.2.2
+
+`CHANGED` add coverage & package-lock.json in `.gitignore`
+
 ## 2.2.1
 
 `FIXED` upgrade tryIfNotExist method cannot fire callback correctly
