@@ -66,11 +66,11 @@ module.exports = yeoman.generators.Base.extend({
         file.writeFileFromString(JSON.stringify(pkg, null, '  '), 'package.json');
         this.ComponentName = _.capitalize(_.camelCase(pkg.name.split('-').slice(1).join('-')));
         tryIfNotExist('tests', function() {
-            this.template('tests/ComponentName.spec.js', 'tests/' + this.ComponentName + '.spec.jsx');
-            this.copy('tests/index.js', 'tests/index.js');
+            me.template('tests/ComponentName.spec.js', 'tests/' + me.ComponentName + '.spec.jsx');
+            me.copy('tests/index.js', 'tests/index.js');
         });
         tryIfNotExist('.eslintrc.json', function() {
-            this.copy('_eslintrc.json', '.eslintrc.json');
+            me.copy('_eslintrc.json', '.eslintrc.json');
         });
         this.copy('_travis.yml', '.travis.yml');
         this.copy('_gitignore', '.gitignore');

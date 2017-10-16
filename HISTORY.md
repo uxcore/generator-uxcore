@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.2.1
+
+`FIXED` upgrade tryIfNotExist method cannot fire callback correctly
+
 ## 2.2.0
 
 `CHANGED` use `react-dom/test-utils` instead of `react-addons-test-utils`
