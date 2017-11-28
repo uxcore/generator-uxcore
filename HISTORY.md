@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 2.2.3
+
+`CHANGED` fix typo in `app/templates/_package.json`
+
 ## 2.2.2
 
 `CHANGED` add coverage & package-lock.json in `.gitignore`
