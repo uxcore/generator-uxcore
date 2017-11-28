@@ -42,7 +42,7 @@
     "uxcore-kuma": "*",
     "kuma-base": "1.x",
     "enzyme": "^3.0.0",
-    "enzyme-adapter-react-15": "^1.0.0",
+    "enzyme-adapter-react-15": "^1.0.0"
   },
   "dependencies": {
     "classnames": "^2.1.2",
