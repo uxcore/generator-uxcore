@@ -15,6 +15,8 @@ class <%= ComponentName %> extends React.Component {
   static propTypes = {
   };
 
+  static displayName = '<%= ComponentName %>';
+
   constructor(props) {
     super(props);
     this.state = {};
@@ -26,8 +28,6 @@ class <%= ComponentName %> extends React.Component {
     );
   }
 }
-
-<%= ComponentName %>.displayName = '<%= ComponentName %>';
 
 export default <%= ComponentName %>;
 
