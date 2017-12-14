@@ -1,6 +1,11 @@
 HISTORY
 =================
 
+## 2.3.0
+
+* `CHANGED` update dependencies to the latest
+* `CHANGED` modify tmeplate files to match eslint
+
 ## 2.2.3
 
 `CHANGED` fix typo in `app/templates/_package.json`

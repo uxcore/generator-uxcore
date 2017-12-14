@@ -1,76 +1,69 @@
 'use strict';
 var path = require('path');
 var _ = require('lodash');
-var yeoman = require('yeoman-generator');
+var Generator = require('yeoman-generator');
 
-module.exports = yeoman.generators.Base.extend({
-    init: function() {
-    },
+module.exports = class extends Generator {
+  prompting() {
+    var prompts = [{
+      name: 'name',
+      message: 'Component Name (must start width `uxcore-`)',
+      default: path.basename(process.cwd())
+    }, {
+      name: 'description',
+      message: 'Description',
+      default: path.basename(process.cwd()) + ' component for uxcore.'
+    }, {
+      name: 'keywords',
+      message: 'Key your keywords (comma to split)',
+      default: 'component'
+    }, {
+      name: 'authorName',
+      message: 'Author\'s Name',
+      default: 'eternalsky',
+      store: true
+    }];
 
-    askFor: function() {
-        var done = this.async();
+    return this.prompt(prompts).then((answers) => {
+      this.name = answers.name;
+      this.demoName = this.name.split('-').slice(1).join('-');
+      this.descriptionName = "React " + this.demoName.split('-').join(' ');
+      this.ComponentName = _.upperFirst(_.camelCase(answers.name))
+        .replace(/Uxcore/, '');
 
-        var prompts = [{
-            name: 'name',
-            message: 'Component Name (must start width `uxcore-`)',
-            default: path.basename(process.cwd())
-        },{
-            name: 'description',
-            message: 'Description',
-            default: path.basename(process.cwd()) + ' component for uxcore.'
-        }, {
-            name: 'keywords',
-            message: 'Key your keywords (comma to split)',
-            default: 'component'
-        }, {
-            name: 'authorName',
-            message: 'Author\'s Name',
-            default: 'eternalsky',
-            store: true
-        }];
+      this.keywords = answers.keywords.split(',').map(function (el) {
+        return el.trim();
+      });
+      this.props = answers;
+    });
+  }
 
-        this.prompt(prompts, function(answers) {
-            this.name = answers.name;
-            this.demoName = this.name.split('-').slice(1).join('-');
-            this.descriptionName = "React " + this.demoName.split('-').join(' ');
-            this.ComponentName = _.capitalize(_.camelCase(answers.name))
-                .replace(/Uxcore/, '');
+  app() {
+    this.config.save();
+    this.fs.copy(this.templatePath('_travis.yml'), this.destinationPath('.travis.yml'));
+    this.fs.copy(this.templatePath('_gitignore'), this.destinationPath('.gitignore'));
+    this.fs.copy(this.templatePath('_npmignore'), this.destinationPath('.npmignore'));
+    this.fs.copy(this.templatePath('_eslintrc.json'), this.destinationPath('.eslintrc.json'));
+    this.fs.copy(this.templatePath('HISTORY.md'), this.destinationPath('HISTORY.md'));
+    this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), this);
+    this.fs.copyTpl(this.templatePath('_package.json'), this.destinationPath('package.json'), this);
+  }
 
-            this.keywords = answers.keywords.split(',').map(function(el) {
-                return el.trim();
-            });
+  demoFiles() {
+    this.fs.copyTpl(this.templatePath('index.html'), this.destinationPath('index.html'), this);
+    this.fs.copyTpl(this.templatePath('demo/index.jsx'), this.destinationPath('demo/index.jsx'), this);
+    this.fs.copyTpl(this.templatePath('demo/ComponentNameDemo.jsx'), this.destinationPath('demo/' + this.ComponentName + 'Demo.jsx'), this);
+    this.fs.copyTpl(this.templatePath('demo/ComponentNameDemo.less'), this.destinationPath('demo/' + this.ComponentName + 'Demo.less'), this);
+  }
 
-            this.props = answers;
-            done();
-        }.bind(this));
-    },
+  componentFiles() {
+    this.fs.copyTpl(this.templatePath('src/index.js'), this.destinationPath('src/index.js'), this);
+    this.fs.copyTpl(this.templatePath('src/ComponentName.jsx'), this.destinationPath('src/' + this.ComponentName + '.jsx'), this);
+    this.fs.copyTpl(this.templatePath('src/ComponentName.less'), this.destinationPath('src/' + this.ComponentName + '.less'), this);
+  }
 
-    app: function() {
-        this.config.save();
-        this.copy('_travis.yml', '.travis.yml');
-        this.copy('_gitignore', '.gitignore');
-        this.copy('_npmignore', '.npmignore');
-        this.copy('_eslintrc.json', '.eslintrc.json');
-        this.copy('HISTORY.md', 'HISTORY.md');
-        this.template('README.md', 'README.md');
-        this.template('_package.json', 'package.json');
-    },
-
-    demoFiles: function() {
-        this.template('index.html', 'index.html');
-        this.template('demo/index.js', 'demo/index.js');
-        this.template('demo/ComponentNameDemo.js', 'demo/'+this.ComponentName+'Demo.js');
-        this.template('demo/ComponentNameDemo.less', 'demo/'+this.ComponentName+'Demo.less');
-    },
-
-    componentFiles: function () {
-        this.template('src/index.js', 'src/index.js');
-        this.template('src/ComponentName.js', 'src/'+this.ComponentName+'.js');
-        this.template('src/ComponentName.less', 'src/'+this.ComponentName+'.less');
-    },
-
-    testFiles: function() {
-        this.template('tests/ComponentName.spec.js', 'tests/' + this.ComponentName + '.spec.js');
-        this.copy('tests/index.js', 'tests/index.js');
-    }
-});
+  testFiles() {
+    this.fs.copyTpl(this.templatePath('tests/ComponentName.spec.js'), this.destinationPath('tests/' + this.ComponentName + '.spec.js'), this);
+    this.fs.copy(this.templatePath('tests/index.js'), this.destinationPath('tests/index.js'));
+  }
+};

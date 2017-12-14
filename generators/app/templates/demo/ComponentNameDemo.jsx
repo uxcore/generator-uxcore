@@ -2,12 +2,12 @@
  * <%= ComponentName %> Component Demo for uxcore
  * @author <%= props.authorName %>
  *
- * Copyright 2015-2016, Uxcore Team, Alinw.
+ * Copyright 2017-2018, Uxcore Team, Alinw.
  * All rights reserved.
  */
 
-const React = require('react');
-const <%= ComponentName %> = require('../src');
+import React from 'react';
+import <%= ComponentName %> from '../src';
 
 class Demo extends React.Component {
 
@@ -26,4 +26,4 @@ class Demo extends React.Component {
   }
 }
 
-module.exports = Demo;
+export default Demo;

@@ -2,11 +2,18 @@
  * <%= ComponentName %> Component for uxcore
  * @author <%= props.authorName %>
  *
- * Copyright 2015-2016, Uxcore Team, Alinw.
+ * Copyright 2017-2018, Uxcore Team, Alinw.
  * All rights reserved.
  */
-const React = require('react');
+import React from 'react';
+
 class <%= ComponentName %> extends React.Component {
+
+  static defaultProps = {
+  };
+
+  static propTypes = {
+  };
 
   constructor(props) {
     super(props);
@@ -20,14 +27,7 @@ class <%= ComponentName %> extends React.Component {
   }
 }
 
-<%= ComponentName %>.defaultProps = {
-};
-
-
-// http://facebook.github.io/react/docs/reusable-components.html
-<%= ComponentName %>.propTypes = {
-};
-
 <%= ComponentName %>.displayName = '<%= ComponentName %>';
 
-module.exports = <%= ComponentName %>;
+export default <%= ComponentName %>;
+

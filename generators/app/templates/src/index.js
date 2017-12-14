@@ -2,8 +2,9 @@
  * <%= ComponentName %> Component for uxcore
  * @author <%= props.authorName %>
  *
- * Copyright 2015-2016, Uxcore Team, Alinw.
+ * Copyright 2017-2018, Uxcore Team, Alinw.
  * All rights reserved.
  */
 
-module.exports = require('./<%= ComponentName %>');
+export default from './<%= ComponentName %>';
+
