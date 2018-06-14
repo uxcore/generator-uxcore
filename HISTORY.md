@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 3.0.0
+
+* `CHANEGD` update for React 16
+
 ## 2.3.0
 
 * `CHANGED` update dependencies to the latest
