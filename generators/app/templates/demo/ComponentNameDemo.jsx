@@ -8,6 +8,7 @@
 
 import React from 'react';
 import <%= ComponentName %> from '../src';
+import '../style';
 
 class Demo extends React.Component {
 

@@ -1,6 +1,10 @@
 HISTORY
 =================
 
+## 4.0.0
+
+* `CHANGED` refactor upgrade logic
+
 ## 3.0.0
 
 * `CHANEGD` update for React 16

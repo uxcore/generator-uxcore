@@ -28,6 +28,8 @@ module.exports = class extends Generator {
       this.name = answers.name;
       this.demoName = this.name.split('-').slice(1).join('-');
       this.descriptionName = "React " + this.demoName.split('-').join(' ');
+      this.component_name = answers.name;
+      this.component_name_without_prefix = answers.name.split('-').slice(1).join('-');
       this.ComponentName = _.upperFirst(_.camelCase(answers.name))
         .replace(/Uxcore/, '');
 
@@ -47,6 +49,7 @@ module.exports = class extends Generator {
     this.fs.copy(this.templatePath('HISTORY.md'), this.destinationPath('HISTORY.md'));
     this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), this);
     this.fs.copyTpl(this.templatePath('_package.json'), this.destinationPath('package.json'), this);
+    this.fs.copyTpl(this.templatePath('webpack.custom.js'), this.destinationPath('webpack.custom.js'), this);
   }
 
   demoFiles() {
@@ -60,6 +63,10 @@ module.exports = class extends Generator {
     this.fs.copyTpl(this.templatePath('src/index.js'), this.destinationPath('src/index.js'), this);
     this.fs.copyTpl(this.templatePath('src/ComponentName.jsx'), this.destinationPath('src/' + this.ComponentName + '.jsx'), this);
     this.fs.copyTpl(this.templatePath('src/ComponentName.less'), this.destinationPath('src/' + this.ComponentName + '.less'), this);
+  }
+
+  styleFiles() {
+    this.fs.copyTpl(this.templatePath('style/index.js'), this.destinationPath('style/index.js'), this);
   }
 
   testFiles() {

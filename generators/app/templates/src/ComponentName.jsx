@@ -6,16 +6,21 @@
  * All rights reserved.
  */
 import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 class <%= ComponentName %> extends React.Component {
-
-  static defaultProps = {
-  };
+  static displayName = '<%= ComponentName %>';
 
   static propTypes = {
+    prefixCls: PropTypes.string,
+    className: PropTypes.string,
   };
 
-  static displayName = '<%= ComponentName %>';
+  static defaultProps = {
+    prefixCls: '<%= component_name %>',
+    className: '',
+  };
 
   constructor(props) {
     super(props);
@@ -23,8 +28,11 @@ class <%= ComponentName %> extends React.Component {
   }
 
   render() {
+    const { prefixCls, className } = this.props;
     return (
-      <div><%= name %> component</div>
+      <div className={classnames(prefixCls, className)}>
+        uxcore-test component
+      </div>
     );
   }
 }
